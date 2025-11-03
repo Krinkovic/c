@@ -2,23 +2,21 @@
 
 #include <stdio.h>
 
-int sort(int x, int y, int z) ;
-
 int main() {
-	int x, y, z, c = 0;
+	int x, y, z, temp = 0;
 	while((scanf("%d %d %d", &x, &y, &z) != EOF)) {
   	if (y > x) {
-	    c = x ;
+	    temp = x ;
 	    x = y ;
-	    y = c ;
+	    y = temp ;
   	}
   	if (z > x) {
-	    c = x ;
+	    temp = x ;
 	    x = z ;
-	    z = c ;
+	    z = temp ;
   	}
 
-    if (x > y + z || y > z + x || z > x + y) {
+    if (x > y + z) {
       printf("%s", "impossible\n");
       continue ;
     }
