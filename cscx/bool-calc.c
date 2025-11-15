@@ -1,81 +1,92 @@
 // 2025 Kristoffer
 
-#include <iso646.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
 
-void bNot(int p);
-void bAnd(int p, int q);
-void bOr(int p, int q);
-void bXor(int p, int q);
-void bImplies(int p, int q);
+void bNot(bool b);
+void bAnd(bool a, bool c);
+void bOr(bool a, bool c);
+void bXor(bool a, bool c);
+void bImplies(bool a, bool c);
 
 int main() {
-  char pTemp[10], op[10], qTemp[10];
+  char aTemp[10], bTemp[10], cTemp[10];
   bool p, q;
-  while (true) {
-    int args = scanf("%s %s %s", pTemp, op, qTemp);
-    bool p, q = false;
-    if (args == 2) {
-      bNot(p);
-    }
-    else if (args == 3) {
-      bNot(p, q);
+  int args;
+  while ((args = scanf("%s %s", aTemp, bTemp)) == 2) {
+
+    if (strcmp(aTemp, "not") == 0) {
+      if (strcmp(bTemp, "true") == 0) {
+        q = true;
+      }
+      else {
+        q = false;
+      }
+      bNot(q);
     }
     else {
-      break;
+      scanf("%s", cTemp);
+      if (strcmp(aTemp, "true") == 0) {
+        p = true;
+      }
+      else {
+          p = false;
+      }
+      if (strcmp(cTemp, "true") == 0) {
+        q = true;
+      }
+      else {
+        q = false;
+      }
+
+      if (strcmp(bTemp, "and") == 0){
+        bAnd(p, q);
+      }
+      if (strcmp(bTemp, "or") == 0){
+        bOr(p, q);
+      }
+      if (strcmp(bTemp, "xor") == 0){
+        bXor(p, q);
+      }
+      if (strcmp(bTemp, "implies") == 0){
+        bImplies(p, q);
+      }
     }
   }
 }
 
-/*
-    char ptemp[10],op[10], qtemp[10];
-    int p, q = -1;
-    scanf("%s %s %s", ptemp, op, qtemp);
-    }
-    if (strcmp(ptemp, "true") == 0) {
-      int p = 1;
-    }
-    else {
-      int p = 0;
-    }
-    if (strcmp(qtemp, "true") == 0) {
-      int q = 1;
-    }
-    else {
-      int q = 0;
-    }
-
-    if (strcmp(op, "not") == 0) {
-      bNot(p);
-    }
-    else if (strcmp(op, "and") == 0){
-      bAnd(p, q);
-    }
-    else if (strcmp(op, "or") == 0){
-      bOr(p, q);
-    }
-    else if (strcmp(op, "xor") == 0){
-      bXor(p, q);
-    }
-    else if (strcmp(op, "implies") == 0){
-      bImplies(p, q);
-    }
+void bNot(bool q) {
+  if (q == false) {
+    printf("true\n");
   }
+  else printf("false\n");
 }
 
-void bNot(int p) {
-  if (p == 0) {
-    printf("true");
+void bAnd(bool p, bool q) {
+  if (p == true && q == true) {
+    printf("true\n");
   }
-  else printf("false");
+  else printf("false\n");
 }
 
-void bAnd(int p, int q) {
-  if (p == 1 && q == 1) {
-    printf("true");
+void bOr(bool p, bool q) {
+  if (p == true || q == true) {
+    printf("true\n");
   }
-  else printf("false");
+  else printf("false\n");
 }
-*/
+
+void bXor(bool p, bool q) {
+  if (p == true && q == false || p == false && q == true) {
+    printf("true\n");
+  }
+  else printf("false\n");
+}
+
+void bImplies(bool p, bool q) {
+  if (p == true && q == false) {
+    printf("false\n");
+  }
+  else printf("true\n");
+}
