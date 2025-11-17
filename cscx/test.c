@@ -1,18 +1,15 @@
 
 #include <stdio.h>
 
-int power(int b, int n);
 
 int main() {
-  int b = 5;
-  int n = 3;
-  printf("%d\n", power(b, n));
-}
-
-int power(int b, int n) {
-  int result = 1;
-  for (int i = n; i > 2; --i) {
-    result *= b;
+  int args, a, b, c;
+  while ((args = scanf("%d %d %d", &a, &b, &c)) != EOF) {
+    if (args == 2) {
+      return a + b;
+    }
+    else {
+      return a + b + c;
+    }
   }
-  return b;
 }
