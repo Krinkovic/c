@@ -8,7 +8,7 @@
 // “Hi” otherwise
 
 int main() {
-  int time = 0;
+  int time;
   while((scanf("%d", &time) != EOF)) {
     if (time >= 4 && time <= 11) {
       printf("Good morning\n");

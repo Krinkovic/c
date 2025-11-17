@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 int main() {
-	int x, y, z, temp = 0;
+	int temp = 0;
+	int x, y, z;
 	while((scanf("%d %d %d", &x, &y, &z) != EOF)) {
   	if (y > x) {
 	    temp = x;

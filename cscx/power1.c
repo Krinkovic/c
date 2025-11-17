@@ -5,7 +5,7 @@
 int power(int b, int n);
 
 int main() {
-  int base, exp = 0;
+  int base, exp;
   scanf("%d %d", &base, &exp);
   printf("%d\n", power(base, exp));
 }

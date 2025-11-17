@@ -3,12 +3,12 @@
 #include <stdio.h>
 
 int main() {
-  int start1, end1 = 0;
-  int start2, end2 = 0;
-  int hh1, mm1 = 0;
-  int hh2, mm2 = 0;
-  int hh3, mm3 = 0;
-  int hh4, mm4 = 0;
+  int start1, end1;
+  int start2, end2;
+  int hh1, mm1;
+  int hh2, mm2;
+  int hh3, mm3;
+  int hh4, mm4;
 
   while (scanf("%d:%d %d:%d %d:%d %d:%d", &hh1, &mm1, &hh2, &mm2, &hh3, &mm3, &hh4, &mm4) == 8) {
     start1 = hh1 * 60 + mm1;
