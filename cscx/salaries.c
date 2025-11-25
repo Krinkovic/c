@@ -1,7 +1,6 @@
 // 2025 Kristoffer
 
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_NAME 60
 
@@ -29,7 +28,7 @@ int main() {
 
     printf("%s has the highest salary: %d kr\n", highest.name, highest.salary);
     printf("%s has the lowest salary: %d kr\n", lowest.name, lowest.salary);
-    printf("the monthly cost is %d\n", total);
+    printf("The total monthly cost is %d kr\n", total);
   }
 }
 
