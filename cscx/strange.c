@@ -7,7 +7,8 @@ char *strange(char s, char e);
 
 int main() {
   char start, end;
-  while (scanf("%c %c", &start, &end) == 2) {
+  while (scanf(" %c %c", &start, &end) == 2) {
+    printf("'%c' '%c'\n", start, end);
     char *charseq = strange(start, end);
     printf("%s\n", charseq);
     free(charseq);
