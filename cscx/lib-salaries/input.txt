@@ -1,0 +1,11 @@
+5
+Eve 10000
+Kristoffer 17000
+Anna 13000
+Adam 7000
+Jeff 3000
+
+3
+Adam 30000
+Eve 10000
+Satan 50000
